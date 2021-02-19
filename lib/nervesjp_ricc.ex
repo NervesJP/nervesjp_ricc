@@ -15,4 +15,8 @@ defmodule NervesjpRicc do
   def hello do
     :world
   end
+
+  def awesome do
+    IO.puts("NervesはElixirでIoTのナウでヤングなcoolなすごいやつです！")
+  end
 end
