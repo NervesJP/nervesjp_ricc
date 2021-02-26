@@ -10,6 +10,7 @@ defmodule Sensor.Aht20 do
   alias Circuits.I2C
 
   # 定数
+  alias Sensor.ConstNerves
   @i2c_bus ConstNerves.i2c_bus
   @i2c_addr ConstNerves.i2c_addr
   @i2c_delay ConstNerves.i2c_delay_ms
@@ -18,7 +19,7 @@ defmodule Sensor.Aht20 do
   @doc """
   温度を表示
   ## Examples
-    iex> Aht20.print_temp
+    iex> Sensor.Aht20.print_temp
     > temp (degree Celsius)
     22.1
     :ok
@@ -37,7 +38,7 @@ defmodule Sensor.Aht20 do
   @doc """
   湿度を表示
   ## Examples
-    iex> Aht20.print_humi
+    iex> Sensor.Aht20.print_humi
     > humi (%)
     41.2
     :ok
@@ -56,7 +57,7 @@ defmodule Sensor.Aht20 do
   @doc """
   AHT20から温度・湿度を取得
   ## Examples
-    iex> Aht20.read_from_aht20
+    iex> Sensor.Aht20.read_from_aht20
     {:ok, {22.4, 40.3}}
     {:error, "Sensor is not connected"}
   """

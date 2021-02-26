@@ -15,7 +15,6 @@ defmodule NervesRiccOkinawa.Application do
         # Children for all targets
         # Starts a worker by calling: NervesRiccOkinawa.Worker.start_link(arg)
         # {NervesRiccOkinawa.Worker, arg},
-        {ButtonServer, []}
       ] ++ children(target())
 
     Supervisor.start_link(children, opts)
