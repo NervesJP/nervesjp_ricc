@@ -1,4 +1,4 @@
-defmodule ConstNerves do
+defmodule Sensor.ConstNerves do
   @moduledoc """
   定数を定義するためのモジュール
   """

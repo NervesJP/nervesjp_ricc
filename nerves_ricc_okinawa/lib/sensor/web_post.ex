@@ -1,7 +1,8 @@
-defmodule WebPost do
+defmodule Sensor.WebPost do
 
   require Logger
 
+  alias Sensor.ConstNerves
   @my_name ConstNerves.my_name
   @url_temp ConstNerves.url_temp
   @url_humi ConstNerves.url_humi
@@ -9,7 +10,7 @@ defmodule WebPost do
   @doc """
   測定データを打ち上げ
   ## Examples
-    iex> Web.senddata
+    iex> Sensor.Aht20.read_from_aht20() |> Sensor.WebPost.senddata()
     > send: 22.7 degree Celsius, 39.9 %
     :ok
   """
