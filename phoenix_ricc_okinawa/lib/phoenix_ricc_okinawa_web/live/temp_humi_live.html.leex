@@ -19,11 +19,11 @@
 <h2>Curl Sample</h2>
 <pre>
 温度（temp）：
-❯ curl -X POST -H "Content-Type: application/json" -d '{"name": "nishiuchikazuma", "value":26.5, "time": "19780419"}' http://localhost:4000/api/temp
+❯ curl -X POST -H "Content-Type: application/json" -d '{"name": "nishiuchikazuma", "value":26.5, "time": "19780419"}' http://${NERVES_IP}/api/temp
 {"name":"nishiuchikazuma","time":"19780419","value":"26.5"}⏎
 </pre>
 <pre>
 湿度（humi）：
-❯ curl -X POST -H "Content-Type: application/json" -d '{"name": "nishiuchikazuma", "value":99.9, "time": "1119780419"}' http://localhost:4000/api/humi
+❯ curl -X POST -H "Content-Type: application/json" -d '{"name": "nishiuchikazuma", "value":99.9, "time": "1119780419"}' http://${NERVES_IP}/api/humi
 {"name":"nishiuchikazuma","time":"1119780419","value":"99.9"}⏎
 </pre>
