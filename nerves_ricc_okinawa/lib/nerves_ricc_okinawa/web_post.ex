@@ -22,7 +22,7 @@ defmodule WebPost do
     post(humi, @url_humi)
   end
 
-  def senddata({temp, humi}) do
+  def senddata({:ok, {temp, humi}}) do
     senddata({temp, nil})
     senddata({nil, humi})
   end

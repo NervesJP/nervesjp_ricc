@@ -4,8 +4,8 @@ defmodule ConstNerves do
   """
 
   def my_name(), do: "ricc_okinawa"
-  def url_temp(), do: "http://192.168.11.7/api/temp"
-  def url_humi(), do: "http://192.168.11.7/api/humi"
+  def url_temp(), do: "http://" <> System.get_env("NERVES_IP") <> "/api/temp"
+  def url_humi(), do: "http://" <> System.get_env("NERVES_IP") <> "/api/humi"
 
   def gpio_button(), do: 5
   def gpio_led(), do: 16
