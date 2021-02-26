@@ -1,30 +1,33 @@
-defmodule NervesRiccOkinawa.ButtonServer do
+defmodule ButtonServer do
   use GenServer
-
   require Logger
 
-  alias Circuits.GPIO
-
-  @button 5
-  @led 16
+  @led ConstNerves.gpio_led
+  @button ConstNerves.gpio_button
+  @led_off ConstNerves.led_off
 
   def start_link(_) do
     GenServer.start_link(__MODULE__, [])
   end
 
   def init(_) do
-    {:ok, button} = GPIO.open(@button, :input, pull_mode: :pullup)
-    GPIO.set_interrupts(button, :both)
+    {:ok, button} = Circuits.GPIO.open(@button, :input, pull_mode: :pullup)
+    {:ok, led} = Circuits.GPIO.open(@led, :output)
 
-    {:ok, led} = GPIO.open(@led, :output)
+    # Circuits.GPIO.set_interrupts(button, :both)
+    Circuits.GPIO.set_interrupts(button, :rising)
 
     {:ok, %{button: button, led: led}}
   end
 
   def handle_info({:circuits_gpio, @button, _timestamp, value}, state) do
-    Logger.debug("Button is now #{value}")
+    Logger.info("Button => #{value}")
 
-    GPIO.write(state.led, value)
+    Circuits.GPIO.write(state.led, value)
+
+    Sensor.Aht20.read_from_aht20() |> WebPost.senddata()
+    Process.sleep(100)
+    Circuits.GPIO.write(state.led, @led_off)
 
     {:noreply, state}
   end
