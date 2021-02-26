@@ -1,4 +1,4 @@
-defmodule NervesjpRicc.ButtonServer do
+defmodule NervesRiccOkinawa.ButtonServer do
   use GenServer
 
   require Logger

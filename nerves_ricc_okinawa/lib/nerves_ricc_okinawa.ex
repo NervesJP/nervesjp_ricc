@@ -1,6 +1,6 @@
-defmodule NervesjpRicc do
+defmodule NervesRiccOkinawa do
   @moduledoc """
-  Documentation for NervesjpRicc.
+  Documentation for NervesRiccOkinawa.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule NervesjpRicc do
 
   ## Examples
 
-      iex> NervesjpRicc.hello
+      iex> NervesRiccOkinawa.hello
       :world
 
   """

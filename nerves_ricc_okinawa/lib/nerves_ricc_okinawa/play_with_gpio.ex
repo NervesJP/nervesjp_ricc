@@ -1,4 +1,4 @@
-defmodule NervesjpRicc.PlayWithGpio do
+defmodule NervesRiccOkinawa.PlayWithGpio do
   def write(pin_number, on_or_off) do
     {:ok, gpio} = Circuits.GPIO.open(pin_number, :output)
     Circuits.GPIO.write(gpio, on_or_off)

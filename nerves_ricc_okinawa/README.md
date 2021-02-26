@@ -1,4 +1,4 @@
-# NervesjpRicc
+# NervesRiccOkinawa
 
 **TODO: Add description**
 

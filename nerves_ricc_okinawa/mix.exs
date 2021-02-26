@@ -1,7 +1,7 @@
-defmodule NervesjpRicc.MixProject do
+defmodule NervesRiccOkinawa.MixProject do
   use Mix.Project
 
-  @app :nervesjp_ricc
+  @app :nerves_ricc_okinawa
   @version "0.1.0"
   @all_targets [:rpi0, :rpi3, :rpi4]
 
@@ -22,7 +22,7 @@ defmodule NervesjpRicc.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: {NervesjpRicc.Application, []},
+      mod: {NervesRiccOkinawa.Application, []},
       extra_applications: [:logger, :runtime_tools, :inets]
     ]
   end
