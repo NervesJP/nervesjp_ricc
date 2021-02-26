@@ -26,13 +26,11 @@ config :nerves, source_date_epoch: "1613789624"
 
 config :logger, backends: [RingLogger]
 
-
 #==============================
 # add
 #==============================
 import_config("../../phoenix_ricc_okinawa/config/config.exs")
 import_config("../../phoenix_ricc_okinawa/config/prod.exs")
-
 
 config :phoenix_ricc_okinawa, PhoenixRiccOkinawaWeb.Endpoint,
   code_reloader: false,           # Nerves root filesystem is read-only, so disable the code reloader
@@ -41,9 +39,7 @@ config :phoenix_ricc_okinawa, PhoenixRiccOkinawaWeb.Endpoint,
   server: true,                   # Start the server since we're running in a release instead of through `mix`
   url: [host: "localhost", port: 80]
 
-
 config :tzdata, :data_dir, "/data/tzdata"
-
 
 if Mix.target() == :host or Mix.target() == :"" do
   import_config "host.exs"

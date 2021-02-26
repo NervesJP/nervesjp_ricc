@@ -103,7 +103,7 @@ defmodule Sensor.Aht20 do
     ret
   end
 
-  #生データを温度と湿度の値に変換
+  # 生データを温度と湿度の値に変換
   ## Parameters
   ## - val: POSTする内容
   defp convert(src) do

@@ -21,9 +21,9 @@ defmodule PhoenixRiccOkinawaWeb.ApiView do
       value: value,
       time: time
     }
-   end
+  end
 
-   def render("humi.json", %{post: postdata}) do
+  def render("humi.json", %{post: postdata}) do
     [name, value, time] = postdata2string(postdata)
 
     # name = postdata["name"]
@@ -37,7 +37,7 @@ defmodule PhoenixRiccOkinawaWeb.ApiView do
     }
    end
 
-   defp postdata2string(postdata) do
+  defp postdata2string(postdata) do
     name = to_string(postdata["name"])
     value = to_string(postdata["value"])
     time = to_string(postdata["time"])
