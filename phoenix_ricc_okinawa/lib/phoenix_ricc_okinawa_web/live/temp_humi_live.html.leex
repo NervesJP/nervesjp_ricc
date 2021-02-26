@@ -1,0 +1,29 @@
+<h2>温度・湿度表示</h2>
+
+<div>temp: <%= @temp %></div>
+<div>humi: <%= @humi %></div>
+
+<%# <h3>HTML Post</h3>
+<form method="post" action="/api/temp/">
+    <div>
+        value: <input type="text" name="value"><br />
+        name: <input type="text" name="name"><br />
+        time: <input type="text" name="time">
+    </div>
+    <div>
+        <input type="submit" value="submit">
+    </div>
+</form> %>
+
+
+<h2>Curl Sample</h2>
+<pre>
+温度（temp）：
+❯ curl -X POST -H "Content-Type: application/json" -d '{"name": "nishiuchikazuma", "value":26.5, "time": "19780419"}' http://localhost:4000/api/temp
+{"name":"nishiuchikazuma","time":"19780419","value":"26.5"}⏎
+</pre>
+<pre>
+湿度（humi）：
+❯ curl -X POST -H "Content-Type: application/json" -d '{"name": "nishiuchikazuma", "value":99.9, "time": "1119780419"}' http://localhost:4000/api/humi
+{"name":"nishiuchikazuma","time":"1119780419","value":"99.9"}⏎
+</pre>

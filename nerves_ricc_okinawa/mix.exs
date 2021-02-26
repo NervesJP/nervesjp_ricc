@@ -2,7 +2,7 @@ defmodule NervesRiccOkinawa.MixProject do
   use Mix.Project
 
   @app :nerves_ricc_okinawa
-  @version "0.1.0"
+  @version "0.2.0"
   @all_targets [:rpi0, :rpi3, :rpi4]
 
   def project do
@@ -37,6 +37,10 @@ defmodule NervesRiccOkinawa.MixProject do
       {:toolshed, "~> 0.2.13"},
       {:circuits_gpio, "~> 0.4"},
       {:circuits_i2c, "~> 0.1"},
+      {:httpoison, "~> 1.6"},
+      {:jason, "~> 1.2"},
+      {:timex, "~> 3.5"},
+      {:phoenix_ricc_okinawa, path: "../phoenix_ricc_okinawa"},
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.11.3", targets: @all_targets},
