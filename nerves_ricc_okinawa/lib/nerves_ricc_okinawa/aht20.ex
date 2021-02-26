@@ -53,16 +53,6 @@ defmodule Sensor.Aht20 do
     humi
   end
 
-  def read_from_aht20_temp() do
-    {temp, _} = read_from_aht20()
-    {temp, nil}
-  end
-
-  def read_from_aht20_humi() do
-    {_, humi} = read_from_aht20()
-    {nil, humi}
-  end
-
   @doc """
   AHT20から温度・湿度を取得
   ## Examples
@@ -88,12 +78,11 @@ defmodule Sensor.Aht20 do
     ret =
       case I2C.read(ref, @i2c_addr, 7) do
         # 正常に値が取得できたときは温度・湿度の値をタプルで返す
-        # {:ok, val} -> {:ok, val |> convert()}
-        {:ok, val} -> val |> convert()
+        {:ok, val} -> {:ok, val |> convert()}
         # センサからの応答がないときはメッセージを返す
         {:error, :i2c_nak} -> {:error, "Sensor is not connected"}
         # その他のエラーのときもメッセージを返す
-        _ -> {:error, "An error occurred"}
+        _ -> {:error, "Unexpected error occurred"}
       end
 
     # I2Cを閉じる
