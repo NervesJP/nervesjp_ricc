@@ -18,6 +18,7 @@ defmodule PhoenixRiccOkinawaWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+    live "/temp", TempLive
     live "/temphumi", TempHumiLive
 
     # get "/api", ApiController, :index
