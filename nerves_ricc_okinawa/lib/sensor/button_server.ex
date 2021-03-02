@@ -26,7 +26,7 @@ defmodule Sensor.ButtonServer do
 
     Circuits.GPIO.write(state.led, value)
 
-    Sensor.Aht20.read_from_aht20() |> Sensor.WebPost.senddata()
+    Sensor.Mcp9808.read_mcp9808() |> Sensor.WebPost.senddata()
     Process.sleep(100)
     Circuits.GPIO.write(state.led, @led_off)
 
