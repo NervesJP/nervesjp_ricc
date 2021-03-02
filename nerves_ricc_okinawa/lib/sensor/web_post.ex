@@ -23,6 +23,10 @@ defmodule Sensor.WebPost do
     post(humi, @url_humi)
   end
 
+  def senddata({:ok, {temp, nil}}) do
+    senddata({temp, nil})
+  end
+
   def senddata({:ok, {temp, humi}}) do
     senddata({temp, nil})
     senddata({nil, humi})
